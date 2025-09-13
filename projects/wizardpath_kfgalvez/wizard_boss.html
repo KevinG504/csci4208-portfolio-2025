@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>Triple Adventure</title>
+        <link rel="icon" href="assets/weapons/cimitar.png" />
+        <link rel="stylesheet" href="wizard-styles/wizard-styles.css">
+    </head>
+    <body>
+        <h1>The King Dragon's Lair</h1> 
+        <hr>
+
+        <h2> You have entered the dragon's lair! </h2>
+        <img id = "dragonImage" src='assets/wizard_fire-dragon.jpg' width="480">
+
+        <img id = "magicStone" src = 'assets/wizard_mana-stone.jpg' width="480" style = "display:none;">
+            
+        <p> "There's no way I can beat that..."</p>
+        <p> You suddenly remember the cursed book you found earlier!</p>
+        
+        <h4> What will you do? </h4>
+
+        <!-- begin fight sequence with ogre-->
+        <div id = "battleText"></div>
+
+        <div id='options'>
+
+        <button id='Electric blast' onclick='attack()'> Electric Blast </button>
+
+        <button id='CursedBook' onclick='cursedBook()'> Use Cursed Book </button>
+        </div>
+
+        <div id="homeButton" style="display:none;">
+        <button onclick="location.href='../index.html?' + queryString">Return to Menu</button>
+        </div>
+        <hr>
+        </div>
+        <hr>
+        <iframe src='wizard_inventory.html' id=inventory height=100 width=200></iframe>
+        <script>
+            //update inventories and all items
+            inventory.src += location.search;
+            var queryString = new URLSearchParams(location.search);
+            var gp = +queryString.get("gp");
+            var hp = +queryString.get("hp");
+            var ap = +queryString.get("ap");
+            //track if dragon is dead
+            var dragonDead = queryString.get('dragonDead') == 'true';
+            var dragonHP = 1000, dragonAP = 10;
+            var options = document.getElementById('options');
+
+            //if dragon dead then displat magic stone
+            if (dragonDead){
+                document.getElementById('dragonImage').style.display = 'none'; //hide dragon image once dead
+                document.getElementById('magicStone').style.display = 'block'; //show the stone
+                options.style.display = "none"; 
+                battleText.innerHTML = "The dragon has already been defeated. The mana stone awaits you.";
+                document.getElementById('homeButton').style.display = 'inline-block';
+
+            }
+        
+            //create function that allows dragon to die
+            function cursedBook(){
+                var hasBook = queryString.get('book') == 'true'; //check if player has book
+
+                if (!hasBook){
+                    battleText.innerHTML = "You don't have the cursed book! Good luck...";
+                    return; //stop function here
+                }
+                dragonHP -= dragonHP; //insta kill the dragon with the cursed book
+                queryString.set('dragonDead', 'true'); ///prevents dragon from respawing
+                inventory.src ='wizard_inventory.html?'+queryString;
+                battleText.innerHTML =`You defeated the dragon and can collect your prize!..`
+                options.style.display = "none"; //hide ui once ogre is dead
+                document.getElementById('dragonImage').style.display = 'none'; //hide dragon image once dead
+                document.getElementById('magicStone').style.display = 'block'; //show the stone
+
+                //once dragon is dead, only show return home option
+
+                document.getElementById('homeButton').style.display = 'inline-block';
+
+            }
+
+            function attack(){ //include attack function but never really going to kill the dragon like this 
+                dragonHP -= ap;
+                hp -= dragonAP
+                queryString.set('hp',hp);
+                inventory.src ='wizard_inventory.html?'+queryString;
+                battleText.innerHTML =`You hit for ${ap} damage, it has ${dragonHP}hp left.<br> You take ${dragonAP} damage.`
+                if (hp <= 0){
+                    battleText.innerHTML =`You Died.`
+                    options.innerHTML =`<a href= '../index.html'><button>Game Over</button></a>`
+                }
+            }
+        </script>
+    </body>
+<html>

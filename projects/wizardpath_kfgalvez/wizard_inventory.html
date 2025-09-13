@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>RPG Inventory</title>
+    <link rel="icon" href="assets/dragon-logo.png" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            color: #333;
+            padding: 5px;
+        }
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            padding: 6px 12px;
+            text-align: center;
+            border-radius: 6px;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        td {
+            background-color: #e0e0ff;
+            min-width: 30px;
+        }
+    </style>
+</head>
+    <body>
+        <h3>Inventory</h3>
+        <table>
+        <tr>
+            <th>💰</th>   <!-- Gold -->
+            <th>💜</th>   <!-- HP -->
+            <th>✨</th>   <!-- AP (magic) -->
+            <th>🔑</th>   <!-- Keys -->
+            </tr>
+            <tr>
+            <td id="gp">0</td>
+            <td id="hp">0</td>
+            <td id="ap">0</td>
+            <td id="keys">0</td>
+            </tr>
+            </table>
+    <script>
+        const queryString = new URLSearchParams(location.search);
+        document.getElementById("gp").innerText = queryString.get("gp") || 0;
+        document.getElementById("hp").innerText = queryString.get("hp") || 0;
+        document.getElementById("ap").innerText = queryString.get("ap") || 0;
+        document.getElementById("keys").innerText = queryString.get("keys") || 0;
+    </script>
+    </body>
+</html>

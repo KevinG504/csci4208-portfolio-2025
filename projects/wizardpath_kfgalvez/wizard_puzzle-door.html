@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Triple Adventure</title>
+        <link rel="icon" href="assets/weapons/cimitar.png" />
+        <link rel="stylesheet" href="wizard-styles/wizard-styles.css">
+    </head>
+    <body>
+        <h1>Puzzle Room</h1>
+        <hr>
+
+        <h2> The room is filled with strange symbols and a locked chest. </h2>
+        <img src="assets/wizard_puzzlechest.png" width="480">
+        <h2> Solve the puzzle to unlock something valuable. </p>
+
+        <p id="puzzleText">Solve the riddle to get the key: "I can bind, I can free, I can light the dark; I exist only when spoken aloud. What am I?"</p>
+        <input type="text" id="answer" placeholder="Your answer">
+        <button onclick="solvePuzzle()">Submit Answer</button>
+
+
+        <div id="text"></div>
+
+        <div id="options">
+            <button onclick="solvePuzzle()">Solve Puzzle</button>
+            <hr>
+            <a id="exit" href="#" onclick="location.href='wizard_courtyard.html?' + queryString">Leave the puzzle room</a>
+        </div>
+
+        <!-- display a reward when puzzle is solved -->
+        <img id="puzzleReward" src="" width="100" style="display:none">
+
+        <iframe src='wizard_inventory.html' id=inventory height=100 width=200></iframe>
+        <script>
+            inventory.src += location.search;
+
+            var queryString = new URLSearchParams(location.search);
+            var gp = +queryString.get("gp");
+            var hp = +queryString.get("hp");
+            var ap = +queryString.get("ap");
+            var keys = +queryString.get("keys"); // e.g., puzzle key
+            
+            //create a function that for solving puzzle
+            function solvePuzzle(){
+                //account for case sensitivity
+                var ans = document.getElementById('answer').value.toLowerCase().trim();
+                if(ans === "spell"){
+                    //add key to user inventory
+                    queryString.set('keys', keys + 1);
+                    inventory.src = 'wizard_inventory.html?' + queryString;
+                    puzzleReward.src = 'assets/wizard_strangekey.gif';
+                    puzzleReward.style.display = "block";
+                    text.innerHTML = "Correct! You found a magical key!";
+                } else {
+                text.innerHTML = "Incorrect. The magic eludes you; try again.";
+                }
+            }
+
+        </script>
+    </body>
+</html>

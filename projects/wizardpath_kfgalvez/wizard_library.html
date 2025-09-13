@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Triple Adventure</title>
+        <link rel="icon" href="assets/weapons/cimitar.png" />
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="wizard-styles/wizard-styles.css">
+    </head>
+    <body>
+        <div id="wizardWrapper">
+            <img id ="wizardBackground" src='assets/wizard_cursed-book.gif'>
+            
+            <!-- apply styles to the text over the gif-->
+             <div id="wizardOverlay">
+                <h1>Library</h1>
+                <h4>Possessed spell books float around the library.</h4>
+                <h4>You notice one of the books is glowing...</h4>
+                <div id="wizardButtons">
+                    <button class="fight-button" id='fightBtn' onclick='attack()'>Fight</button>
+                    <a class="fight-button" id='wizardPath' href='wizardPath.html'>Retreat</a>
+                </div>
+            </div>
+            <iframe src='inventory.html' id="inventory"></iframe>
+            <img id="strangekey" src="" width="100" style="display:none;"> <!-- hidden until book defeat -->
+
+        </div>
+
+        <div id="battleText"></div>
+        <script>
+            //update all inventory data
+            inventory.src += location.search;
+            wizardPath.href += location.search;
+            var queryString = new URLSearchParams(location.search);
+            var gp = +queryString.get("gp");
+            var hp = +queryString.get("hp");
+            var ap = +queryString.get("ap");
+            var keys = +queryString.get("keys");
+            var bookHP = 3, bookAP = 2;
+            //attack function to fight book
+            function attack(){
+                bookHP -= ap;
+                if (bookHP <= 0){
+                    //hide old gif
+                    var bg = document.getElementById('wizardBackground');
+                    bg.src = 'assets/wizard_strangekey.gif';
+                    //show the key
+                    document.getElementById('strangekey').style.display = 'none';
+                    strangekey.src ='assets/wizard_strangekey.gif';
+                    strangekey.style.display = 'block';
+                    queryString.set('gp',gp+3);
+                    queryString.set('hp',hp);
+                    queryString.set('keys',keys+1);
+                    //update book data
+                    inventory.src ='wizard_inventory.html?'+queryString;
+                    //update retreat path in order to retreat from library and keep keys
+                    document.getElementById("wizardPath").href = "wizard_wizardPath.html?" + queryString;
+                    battleText.innerHTML =`You destroy the book, and a strange key drops from it..`
+                    options.innerHTML =`<a href='wizard_wizardPath.html?${queryString}'><button>Go back</button></a>`;
+                    document.getElementById('wizardButtons').style.display = 'none';
+                }
+                else {
+                    hp -= bookAP
+                    queryString.set('hp',hp);
+                    inventory.src ='wizard_inventory.html?'+queryString;
+                    battleText.innerHTML =`You hit for ${ap} damage, it has ${bookHP}hp left.<br> You take ${bookAP} damage.}`
+                    if (hp <= 0){
+                        battleText.innerHTML =`You Died.`
+                        options.innerHTML =`<a href= 'index.html'><button>Game Over</button></a>`
+                    }
+                }
+            }
+        </script>
+    </body>
+<html>

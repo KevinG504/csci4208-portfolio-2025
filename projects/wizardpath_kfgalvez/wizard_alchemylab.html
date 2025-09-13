@@ -1,0 +1,55 @@
+
+<html>
+    <head>
+        <title>Triple Adventure</title>
+    <link rel="icon" href="assets/dragon-logo.png" />
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="wizard-styles/wizard-styles.css">
+    </head>
+    <body>
+        <div id="wizardWrapper">
+
+            <img id="wizardBackground" src='assets/wizard_lockeddoor.jpg'>
+
+            <div id="wizardOverlay">
+                <h1>Alchemy Lab</h1>
+                <p id='textbox'>Click the door to enter.</p>
+
+                <div id="wizardButtons">
+                    <button class="fight-button" id="openDoorBtn" onclick="openDoor()">Open Door</button>
+                </div>
+                
+                <a class="fight-button" id='exit' href='wizard_wizardPath.html'>Retreat</a>
+            </div>
+
+            <iframe src='wizard_inventory.html' id="inventory"></iframe>
+        </div>
+        <script>
+            var queryString = new URLSearchParams(location.search);
+            var gp = +queryString.get("gp");
+            var hp = +queryString.get("hp");
+            var ap = +queryString.get("ap");
+            var keys = +queryString.get("keys");
+            inventory.src = 'wizard_inventory.html?' + queryString;
+            exit.href += location.search;
+            //allows us to go into lab via href
+            //can get potion to fight the courtyard boss now!
+            function openDoor(){
+                //if we have a door, show the open door doorImage.
+                //display message that key has been reduced.
+                //now we can enter alchemy lab
+                if (keys > 0){
+                    textbox.innerHTML =`The door unlocked. but the key broke apart.`
+                    keys--;
+                    queryString.set('keys', keys);
+                    inventory.src ='wizard_inventory.html?'+queryString;
+                    window.location.href ='wizard_insideAlchemy.html?'+queryString;
+                    exit.href ='wizard_wizardPath.html?'+queryString;
+                }
+                else {
+                    textbox.innerHTML =`The door is locked`;
+                }
+            }
+        </script>
+    </body>
+<html>
