@@ -28,6 +28,9 @@ See the external repo for details:
 - **Game Info / Paths** – (https://github.com/Enrikkk/Adv_Web_Apps_Project1_HTML-CSS-Game#-character-paths)  
 
 ---
+SCREENSHOT -
+![Screenshot of Triple Adventure](screenshot.png)
+
 
 ## Notes
 - Minor styling inconsistencies on some pages.  
