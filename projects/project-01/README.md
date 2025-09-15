@@ -29,7 +29,7 @@ See the external repo for details:
 
 ---
 SCREENSHOT -
-![Screenshot of Triple Adventure](screenshot.png)
+![Screenshot of Triple Adventure](project_screenshot.png)
 
 
 ## Notes
