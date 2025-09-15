@@ -1,7 +1,7 @@
 # Triple Adventure — Project 01
 
-**Live URL:** [Play the game](https://Enrikkk.github.io/Adv_Web_Apps_Project1_HTML-CSS-Game/)  
-**External Repo:** [GitHub Repo](https://github.com/Enrikkk/Adv_Web_Apps_Project1_HTML-CSS-Game)
+**Live URL:** https://Enrikkk.github.io/Adv_Web_Apps_Project1_HTML-CSS-Game/  
+**External Repo:** https://github.com/Enrikkk/Adv_Web_Apps_Project1_HTML-CSS-Game
 
 ---
 
@@ -23,9 +23,9 @@
 
 ## Run Locally
 See the external repo for details:  
-- **Prerequisites / Install** – [GitHub link](https://github.com/Enrikkk/Adv_Web_Apps_Project1_HTML-CSS-Game#-prerequisites)  
-- **Start / Dev** – [GitHub link](https://github.com/Enrikkk/Adv_Web_Apps_Project1_HTML-CSS-Game#-how-to-play)  
-- **Game Info / Paths** – [GitHub link](https://github.com/Enrikkk/Adv_Web_Apps_Project1_HTML-CSS-Game#-character-paths)  
+- **Prerequisites / Install** – (https://github.com/Enrikkk/Adv_Web_Apps_Project1_HTML-CSS-Game#-prerequisites)  
+- **Start / Dev** – (https://github.com/Enrikkk/Adv_Web_Apps_Project1_HTML-CSS-Game#-how-to-play)  
+- **Game Info / Paths** – (https://github.com/Enrikkk/Adv_Web_Apps_Project1_HTML-CSS-Game#-character-paths)  
 
 ---
 
