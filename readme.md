@@ -1,4 +1,4 @@
-# 🎓 Course Portfolio — <Your Name>
+# 🎓 Course Portfolio — Kevin Galvez
 
 
 - **Name:** Kevin Galvez
