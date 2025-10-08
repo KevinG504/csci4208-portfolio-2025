@@ -1,4 +1,5 @@
-# Lab 06 — Quiz Game
+# kevin galvez
+# Lab 06 — Quiz Game 
 
 ## Quick Start
 1. Launch a local server in the `Lab-06` folder 
