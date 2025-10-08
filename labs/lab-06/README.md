@@ -1,4 +1,4 @@
-# kevin galvez -
+# kevin galvez
 # Lab 06 — Quiz Game 
 
 ## Quick Start
