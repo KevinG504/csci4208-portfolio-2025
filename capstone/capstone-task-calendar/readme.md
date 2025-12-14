@@ -21,13 +21,7 @@
 
 ---
 
-## Screenshots / Demo
-
-![Task Calendar Demo](docs/media/demo.gif)
-
----
-
-##Install & Run
+## Install & Run
 
 ```bash
 cd task-calendar-app
