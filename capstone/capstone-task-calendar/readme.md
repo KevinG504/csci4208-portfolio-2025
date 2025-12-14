@@ -27,19 +27,13 @@
 
 ---
 
-## Live Demo / Install & Run
-
-* **GitHub Pages:** https://YOUR-USERNAME.github.io/task-calendar-app/
-* **Local fallback:**
+##Install & Run
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/task-calendar-app.git
 cd task-calendar-app
 npm install
 npm start
 ```
-
-**Requirements:** Node.js v18+; Designed for laptop ≥1280×720; fully keyboard & mouse accessible.
 
 ---
 
