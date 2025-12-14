@@ -48,7 +48,7 @@
 | Lab-05 — JavaScript OOP + Phaser: Dodger Game [#7](https://github.com/KevinG504/csci4208-portfolio-2025/issues/7) | `lab-05` | ready-for-approval |
 | Lab-06 — REST Client: Quiz Game + Leaderboard (Modules + Fetch) [#10](https://github.com/KevinG504/csci4208-portfolio-2025/issues/10) | `lab-06` | open |
 | Lab-07 — Browser Data Layer: Mock Document DB [#30](https://github.com/KevinG504/csci4208-portfolio-2025/issues/30) | `lab-07` | closed |
-| Project-0 — Set up Repo, Project Board, Actions & Pages [#8](https://github.com/KevinG504/csci4208-portfolio-2025/issues/8) | `project-00` | open |
+| Project-0 — Set up Repo, Project Board, Actions & Pages [#8](https://github.com/KevinG504/csci4208-portfolio-2025/issues/8) | `project-00` | ready-for-approval |
 | Project-01 — Interactive Game in HTML & CSS [#4](https://github.com/KevinG504/csci4208-portfolio-2025/issues/4) | `project-01` | closed |
 | Project-02 — Sprint 3: Full Feature Set & Polish [#13](https://github.com/KevinG504/csci4208-portfolio-2025/issues/13) | `project-02` | closed |
 | Project-02 — Sprint 2: MVP Vertical Slice [#12](https://github.com/KevinG504/csci4208-portfolio-2025/issues/12) | `project-02` | closed |
